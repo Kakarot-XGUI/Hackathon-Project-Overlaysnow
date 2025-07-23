@@ -66,10 +66,12 @@ const Home = () => {
 <ScrollVelocity
   texts={['Prepaid order Ships within 24 Hours 🚚', ' 7 days Easy Exchange and Returns | Loved by +1 lakh customers🔥']} 
   velocity={100} 
-  className="custom-scroll-text bg-transparent text-white"
+  className="custom-scroll-text text-6xl bg-transparent font-black text-gray-500 Font2 capitalize"
 /> </div>
 
-  <div className='w-screen pb-2 pt-8 bg-white flex justify-center items-center text-black text-center'><h1 className='text-4xl font-bold tracking-wider'>Trending Category</h1></div>
+  <div className='w-screen pb-2 pt-8 bg-white flex justify-center items-center text-black text-center Font1'>
+    <h1 className='text-5xl tracking-widest'>Trending Category</h1>
+      </div>
 
 
 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-6">
@@ -78,7 +80,7 @@ const Home = () => {
       key={product.id}
       product={product}
       context="home"
-      index={index} 
+      index={index}
     />
   ))}
 </div>

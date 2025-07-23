@@ -1,8 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400..700;1,400..700&family=Bitcount+Prop+Single:wght@100..900&family=Cormorant:ital,wght@0,300..700;1,300..700&family=Luckiest+Guy&family=Special+Gothic+Expanded+One&family=Winky+Rough:ital,wght@0,300..900;1,300..900&display=swap');
+
 @import "tailwindcss";
+
 
 body {
   box-sizing: border-box;
   overflow-x: hidden;
+  font-family: "Winky Rough", sans-serif;
 }
 
 /* Slide panels left/right to reveal content */
@@ -72,3 +76,10 @@ body {
 }
 
 
+.Font2{
+  font-family: "Archivo Narrow", sans-serif;
+}
+
+.Font1{
+  font-family: "Luckiest Guy", cursive;
+}

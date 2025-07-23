@@ -1,5 +1,6 @@
 import Particles from "../components/Particles";
-
+import mr from "../assets/images/Review.png"
+import r from "../assets/images/reviewc.png"
 const contact = () => {
   return (
     <>
@@ -53,6 +54,11 @@ const contact = () => {
     </p>
   </div>
 </div>
+
+<div className='w-screen h-auto mt-10'>
+      <img src={mr} alt="" className='md:hidden' />
+      <img src={r} alt="" className='hidden md:block' />
+    </div>
     </>
   );
 };
