@@ -142,11 +142,11 @@ const TextType = ({
 
     switch (index) {
       case 0:
-        return "text-white text-5xl uppercase italic";
+        return "text-white md:text-5xl uppercase italic";
       case 1:
-        return "text-8xl font-bold uppercase text-orange-400 drop-shadow-sm tracking-wide";
+        return "md:text-8xl font-bold uppercase text-orange-400 drop-shadow-sm tracking-wide";
       case 2:
-        return "text-white font-bold text-5xl italic uppercase";
+        return "text-white font-bold md:text-5xl italic uppercase";
       default:
         return "text-base text-white";
     }

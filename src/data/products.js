@@ -391,6 +391,22 @@ const products = [
     fit: 'Regular Fit',
     delivery: 'Delivery: 2–5 business days'
   },
+   {
+  id: 'h032',
+  name: 'Flare Crop Top',
+  image: img20,
+  gallery: [img20, img20, img20, img20],
+  price: '₹449.00',
+  priceValue: 449,
+  category: 'Crop',
+  tags: ['Women', 'Bright'],
+  description: 'Sunlit crop tee with flare sleeves for movement and style.',
+  rating: 4.5,
+  review: 'Gorgeous silhouette. Pairs well with high-waist pants.',
+  material: 'Soft Cotton Jersey',
+  fit: 'Regular Fit',
+  delivery: 'Delivery: 2–5 business days'
+},
   {
     id: 'h023',
     name: 'Sharp spikes Saint',
@@ -438,6 +454,22 @@ const products = [
     material: 'Cotton-Slub',
     fit: 'Boxy Fit',
     delivery: 'Delivery: 3–5 business days'
+  },
+   {
+    id: 'h030',
+    name: 'DarkVeil Crop Top',
+    image: img18,
+    gallery: [img18, img18, img18, img18],
+    price: '₹499.00',
+    priceValue: 499,
+    category: 'Sleeveless',
+    tags: ['Women', 'Crop'],
+    description: 'Dark Narture with cropped confidence. Light, fun, and radiant.',
+    rating: 4.4,
+    review: 'Color glows on skin. Material hugs just right.',
+    material: 'Soft Lycra Blend',
+    fit: 'Body Fit',
+    delivery: 'Delivery: 2–4 business days'
   },
   {
     id: 'h026',
@@ -505,22 +537,7 @@ const products = [
     fit: 'Slim Fit',
     delivery: 'Delivery: 3–6 business days'
   },
-  {
-    id: 'h030',
-    name: 'DarkVeil Crop Top',
-    image: img18,
-    gallery: [img18, img18, img18, img18],
-    price: '₹499.00',
-    priceValue: 499,
-    category: 'Sleeveless',
-    tags: ['Women', 'Crop'],
-    description: 'Dark Narture with cropped confidence. Light, fun, and radiant.',
-    rating: 4.4,
-    review: 'Color glows on skin. Material hugs just right.',
-    material: 'Soft Lycra Blend',
-    fit: 'Body Fit',
-    delivery: 'Delivery: 2–4 business days'
-  },
+ 
   {
     id: 'h031',
     name: 'Shadow Tank Top',
@@ -537,22 +554,7 @@ const products = [
     fit: 'Slim Fit',
     delivery: 'Delivery: 2–5 business days'
   },
-  {
-  id: 'h032',
-  name: 'Flare Crop Tee',
-  image: img20,
-  gallery: [img20, img20, img20, img20],
-  price: '₹449.00',
-  priceValue: 449,
-  category: 'Crop',
-  tags: ['Women', 'Bright'],
-  description: 'Sunlit crop tee with flare sleeves for movement and style.',
-  rating: 4.5,
-  review: 'Gorgeous silhouette. Pairs well with high-waist pants.',
-  material: 'Soft Cotton Jersey',
-  fit: 'Regular Fit',
-  delivery: 'Delivery: 2–5 business days'
-}
+ 
 // {
 //   id: 'h033',
 //   name: 'Amber Racerback',
