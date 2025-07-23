@@ -68,8 +68,8 @@ const TimelineCard = ({ year, image, description, reverse }) => {
       <div className="hidden md:block w-[6px] h-[180px] bg-transparent" />
 
       {/* Year and Text */}
-      <div className="w-full md:w-[47%] px-6 md:px-0  text-center">
-        <h2 className="text-3xl font-extrabold text-indigo-900 mb-4">{year}</h2>
+      <div className="w-full md:w-[47%] px-6 md:px-0  text-center mt-5">
+        <h2 className="text-2xl md:text-3xl font-extrabold text-indigo-900 mb-4">{year}</h2>
         <p className="text-gray-700 text-lg leading-relaxed capitalize">{description}</p>
       </div>
     </motion.div>
