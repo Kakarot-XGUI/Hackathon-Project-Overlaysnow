@@ -33,6 +33,7 @@ const Home = () => {
         interval={3000}
         swipeable={true}
         emulateTouch={true}
+        swipeScrollTolerance={30}
       >
         <div>
           <img  src={mimg4} alt="Image 1" className="object-cover h-full w-screen" />
@@ -125,6 +126,7 @@ const Home = () => {
         interval={3000}
         swipeable={true}
         emulateTouch={false}
+        swipeScrollTolerance={30}
       >
         <div>
           <img  src={mimg7} alt="Image 1" className="object-cover h-full w-screen" />
