@@ -123,7 +123,7 @@ const Home = () => {
         infiniteLoop={true}
         autoPlay={true}
         interval={3000}
-        swipeable={true}
+        swipeable={false}
         emulateTouch={true}
       >
         <div>

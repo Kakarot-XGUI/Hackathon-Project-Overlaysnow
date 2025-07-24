@@ -74,9 +74,9 @@ const Loader = ({ onFinish }) => {
       {/* Overlay translation in center + spinner at bottom center */}
       {!showLanding && (
         <>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+          <div className="absolute text-orange-500 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
             <span
-              className={`text-white text-5xl md:text-7xl font-extrabold transition-opacity duration-200 ${fade ? 'opacity-100' : 'opacity-0'}`}
+              className={`text-5xl md:text-7xl font-extrabold transition-opacity duration-200 ${fade ? 'opacity-100' : 'opacity-0'}`}
               style={{ letterSpacing: '0.05em', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}
             >
               {overlayTranslations[langIndex]}
@@ -127,7 +127,9 @@ const Loader = ({ onFinish }) => {
 />
 
 <img src={img1} alt="" className="absolute right-0 md:right-5 bottom-10 md:bottom-10 h-[40%] sm:h-[60%] md:h-[55%] lg:h-[60%]"/>
-<img src={img2} alt="" className="absolute h-[25%] md:h-[32%] bottom-[32vh] sm:bottom-[25%] md:bottom-[15vh] sm:h-[30%] md:right-1/3 sm:right-1/2 right-1/4 lg:h-[40%] lg:right-1/5 lg:bottom-[20vh]"/>
+<img src={img2} alt=""
+ className="absolute h-[25%] md:h-[32%] bottom-[32vh] sm:bottom-[25vh] md:bottom-[15vh] sm:h-[30%]
+ md:right-1/3 sm:right-1/2 right-1/6 lg:h-[40%] lg:right-1/5 lg:bottom-[20vh]"/>
 
              </div>
             </div>
