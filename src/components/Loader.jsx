@@ -123,7 +123,7 @@ const Loader = ({ onFinish }) => {
   pauseDuration={1500}
   showCursor={true}
   cursorCharacter="|"
-  className="w-full absolute mt-[16vh] mb-[20vh] left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:left-20 -translate-y-[50%] w-[60%] text-center lg:text-left"
+  className="w-full absolute mt-[16vh] mb-[20vh] left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:left-20 -translate-y-[50%] w-[60%] text-center md:text-left"
 />
 
 <img src={img1} alt="" className="absolute right-0 md:right-5 bottom-10 md:bottom-10 h-[40%] sm:h-[60%] md:h-[55%] lg:h-[60%]"/>
