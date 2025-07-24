@@ -18,22 +18,54 @@ import mimg11 from '../assets/images/homeend.jpg';
 import mimg12 from '../assets/images/homeend1.jpg';
 import mimg13 from '../assets/images/homeend2.jpg';
 import mimg14 from '../assets/images/homeend3.jpg';
+import { useRef, useState } from 'react';
 
+// MobileCarouselWrapper: disables swipe if vertical scroll is detected
+function MobileCarouselWrapper({ children, ...carouselProps }) {
+  const [swipeable, setSwipeable] = useState(true);
+  const touchStart = useRef({ x: 0, y: 0 });
+
+  const handleTouchStart = (e) => {
+    const t = e.touches[0];
+    touchStart.current = { x: t.clientX, y: t.clientY };
+    setSwipeable(true);
+  };
+  const handleTouchMove = (e) => {
+    const t = e.touches[0];
+    const dx = Math.abs(t.clientX - touchStart.current.x);
+    const dy = Math.abs(t.clientY - touchStart.current.y);
+    if (dy > dx && dy > 10) {
+      setSwipeable(false); // vertical scroll detected
+    }
+  };
+  const handleTouchEnd = () => {
+    setTimeout(() => setSwipeable(true), 100); // re-enable after gesture
+  };
+  return (
+    <div
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
+      <Carousel {...carouselProps} swipeable={swipeable}>
+        {children}
+      </Carousel>
+    </div>
+  );
+}
 
 const Home = () => {
   return (
     <>
     
    <section className="md:hidden w-screen h-full bg-black flex items-center justify-center mt-8">
-      <Carousel
+      <MobileCarouselWrapper
         showThumbs={false}
         showStatus={false}
         infiniteLoop={true}
         autoPlay={true}
         interval={3000}
-        swipeable={true}
         emulateTouch={true}
-        swipeScrollTolerance={30}
       >
         <div>
           <img  src={mimg4} alt="Image 1" className="object-cover h-full w-screen" />
@@ -41,7 +73,7 @@ const Home = () => {
         <div>
           <img  src={mimg3} alt="Image 2" className="object-cover h-full w-screen" />
         </div>
-      </Carousel>
+      </MobileCarouselWrapper>
     </section>
     <section className="hidden md:block w-screen h-full bg-black flex items-center justify-center">
       <Carousel
@@ -118,15 +150,13 @@ const Home = () => {
    </div>
 
    <section className="md:hidden w-screen h-full bg-black flex items-center justify-center mt-8">
-      <Carousel
+      <MobileCarouselWrapper
         showThumbs={false}
         showStatus={false}
         infiniteLoop={true}
         autoPlay={true}
         interval={3000}
-        swipeable={true}
         emulateTouch={false}
-        swipeScrollTolerance={30}
       >
         <div>
           <img  src={mimg7} alt="Image 1" className="object-cover h-full w-screen" />
@@ -134,7 +164,7 @@ const Home = () => {
         <div>
           <img  src={mimg8} alt="Image 2" className="object-cover h-full w-screen" />
         </div>
-      </Carousel>
+      </MobileCarouselWrapper>
     </section>
     <section className="hidden md:block w-screen h-full bg-black flex items-center justify-center">
       <Carousel
