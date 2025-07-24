@@ -125,7 +125,7 @@ const Loader = ({ onFinish }) => {
               />
 
               {/* Logo and CircularText ring container at fixed bottom left above taskbar with more margin */}
-              <div className="fixed bottom-16 md:left-16 w-[80px] h-[80px] md:w-[120px] md:h-[120px] lg:w-[160px] lg:h-[160px] z-30 flex items-center justify-center">
+              <div className="fixed bottom-16 left-10 md:left-16 w-[80px] h-[80px] md:w-[120px] md:h-[120px] lg:w-[160px] lg:h-[160px] z-30 flex items-center justify-center">
                 {/* CircularText as a ring around the logo */}
                 <CircularText
                   text=" 🔥 OVERLAY 🔥 CLOTHING"
