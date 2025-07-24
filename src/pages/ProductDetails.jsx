@@ -141,27 +141,23 @@ const ProductDetails = () => {
       </div>
 
       
-      <div className="h-[20vh] w-full bg-gray-200 rounded-lg shadow-inner flex items-center justify-center animate-pulse">
-        <div className='left w-full  h-full flex flex-col justify-center items-center'><img src={i} alt="" className='w-10 hover:scale-[1.3] transition'/>Expert Help, When You Need It</div>
-        <div className='mid w-full  h-full flex flex-col justify-center items-center'><img src={m} alt="" className='w-10 hover:scale-[1.3] transition'/>7 Days Easy Return& Exchange</div>
-        <div className='right w-full  h-full flex flex-col justify-center items-center'><img src={g} alt="" className='w-10 hover:scale-[1.3] transition'/>Shipping within 24 Hours</div>
+      <div className="return h-auto md:h-[20vh] w-full bg-gray-200 rounded-lg shadow-inner flex flex-col md:flex-row items-center justify-center gap-4 md:gap-0 animate-pulse">
+        <div className='left w-full h-full flex flex-col justify-center items-center py-4 md:py-0'><img src={i} alt="" className='w-10 hover:scale-[1.3] transition'/>Expert Help, When You Need It</div>
+        <div className='mid w-full h-full flex flex-col justify-center items-center py-4 md:py-0'><img src={m} alt="" className='w-10 hover:scale-[1.3] transition'/>7 Days Easy Return& Exchange</div>
+        <div className='right w-full h-full flex flex-col justify-center items-center py-4 md:py-0'><img src={g} alt="" className='w-10 hover:scale-[1.3] transition'/>Shipping within 24 Hours</div>
       </div>
-      <div className='h-[35vh] bg-gray-200 py-5 flex flex-col'>
-        <h1 className='text-center text-5xl'>You Flaunt It, We Back It!</h1>
-       
-        <div className='flex gap-10 justify-center'>
-          
- <img src={c1} alt="" className='w-[20vh] h-[20vh] my-7 rounded-full'/>
-          <img src={c2} alt="" className='w-[20vh] h-[20vh] my-7 rounded-full hover:scale-[1.1] transition'/>
-          <img src={c3} alt="" className='w-[20vh] h-[20vh] my-7 rounded-full hover:scale-[1.1] transition'/>
-          <img src={c4} alt="" className='w-[20vh] h-[20vh] my-7 rounded-full hover:scale-[1.1] transition'/>
-          <img src={c5} alt="" className='w-[20vh] h-[20vh] my-7 rounded-full hover:scale-[1.1] transition'/>
-          <img src={c6} alt="" className='w-[20vh] h-[20vh] my-7 rounded-full hover:scale-[1.1] transition'/>
-          <img src={c7} alt="" className='w-[20vh] h-[20vh] my-7 rounded-full hover:scale-[1.1] transition'/>
-          <img src={c8} alt="" className='w-[20vh] h-[20vh] my-7 rounded-full hover:scale-[1.1] transition'/>
-
+      <div className='h-auto md:h-[35vh] bg-gray-200 py-5 flex flex-col'>
+        <h1 className='text-center text-3xl md:text-5xl'>You Flaunt It, We Back It!</h1>
+        <div className='flex flex-wrap gap-6 md:gap-10 justify-center items-center'>
+          <img src={c1} alt="" className='w-[10vh] h-[10vh] md:w-[20vh] md:h-[20vh] my-4 md:my-7 rounded-full'/>
+          <img src={c2} alt="" className='w-[10vh] h-[10vh] md:w-[20vh] md:h-[20vh] my-4 md:my-7 rounded-full hover:scale-[1.1] transition'/>
+          <img src={c3} alt="" className='w-[10vh] h-[10vh] md:w-[20vh] md:h-[20vh] my-4 md:my-7 rounded-full hover:scale-[1.1] transition'/>
+          <img src={c4} alt="" className='w-[10vh] h-[10vh] md:w-[20vh] md:h-[20vh] my-4 md:my-7 rounded-full hover:scale-[1.1] transition'/>
+          <img src={c5} alt="" className='w-[10vh] h-[10vh] md:w-[20vh] md:h-[20vh] my-4 md:my-7 rounded-full hover:scale-[1.1] transition'/>
+          <img src={c6} alt="" className='w-[10vh] h-[10vh] md:w-[20vh] md:h-[20vh] my-4 md:my-7 rounded-full hover:scale-[1.1] transition'/>
+          <img src={c7} alt="" className='w-[10vh] h-[10vh] md:w-[20vh] md:h-[20vh] my-4 md:my-7 rounded-full hover:scale-[1.1] transition'/>
+          <img src={c8} alt="" className='w-[10vh] h-[10vh] md:w-[20vh] md:h-[20vh] my-4 md:my-7 rounded-full hover:scale-[1.1] transition'/>
         </div>
-    
       </div>
     </>
   ) : (
