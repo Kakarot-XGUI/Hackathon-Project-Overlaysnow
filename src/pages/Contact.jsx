@@ -4,7 +4,7 @@ import r from "../assets/images/reviewc.png"
 const contact = () => {
   return (
     <>
-    <div className="w-full h-[135vh] absolute -z-1 bg-black">
+    <div className="w-full h-[200%] absolute -z-1 bg-black">
   <Particles
     particleColors={['#ffffff', '#ffffff']}
     particleCount={800}
