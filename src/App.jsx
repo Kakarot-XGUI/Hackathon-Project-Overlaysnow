@@ -14,6 +14,7 @@ const App = () => {
   const [loadingFinished, setLoadingFinished] = useState(false);
 
   return (
+
     <>
       {!loadingFinished && <Loader onFinish={() => setLoadingFinished(true)} />}
 
@@ -30,6 +31,7 @@ const App = () => {
           </ClerkProvider>
         </div>
       )}
+      
     </>
   );
 };
