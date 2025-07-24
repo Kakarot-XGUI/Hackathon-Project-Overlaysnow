@@ -4,6 +4,7 @@ import img2 from "../assets/images/Loaderd.png"
 import TextType from "../components/TextType"
 import navicon from "../assets/images/navicon.png"
 import ScrollVelocity from "./ScrollVelocity";
+import CircularText from "../components/CircularText";
 
 const overlayTranslations = [
   'Overlay', // English
@@ -108,28 +109,40 @@ const Loader = ({ onFinish }) => {
                 velocity={100}
                 className="custom-scroll-text bg-transparent text-white text-2xl md:text-4xl uppercase animate-pulse"
               />
-              <div className="rounded-full w-[10vh] h-[10vh] md:w-[15vh] md:h-[15vh] lg:w-[20vh] lg:h-[20vh] bottom-10 left-10 md:left-15 border-4 border-white animate-pulse absolute md:bottom-15">
-                <img src={navicon} alt="" className="aniimate-pulse"/>
+
+              {/* Re-add TextType and images with original CSS, but place TextType above the logo/ring */}
+              <TextType
+                text={[
+                  "Presenting You",
+                  "The OverLay",
+                  "` Born here. Styled to slay. those Gucci boys. `"
+                ]}
+                typingSpeed={75}
+                pauseDuration={1500}
+                showCursor={true}
+                cursorCharacter="|"
+                className="w-full absolute mt-[16vh] mb-[20vh] left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:left-20 -translate-y-[50%] w-[60%] text-center md:text-left md:left-15 z-50"
+              />
+
+              {/* Logo and CircularText ring container at fixed bottom left above taskbar with even more left margin */}
+              <div className="fixed bottom-24 left-32 w-[80px] h-[80px] md:w-[120px] md:h-[120px] lg:w-[160px] lg:h-[160px] z-30 flex items-center justify-center">
+                {/* CircularText as a ring around the logo */}
+                <CircularText
+                  text=" 🔥 OVERLAY 🔥 CLOTHING"
+                  onHover="speedUp"
+                  spinDuration={20}
+                  className="w-20 h-20 absolute top-0 left-0"
+                />
+                {/* Logo in the center */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-[60px] h-[60px] md:w-[90px] md:h-[90px] lg:w-[120px] lg:h-[120px] border-4 border-white animate-pulse flex items-center justify-center z-40 bg-black">
+                  <img src={navicon} alt="" className="aniimate-pulse w-2/3 h-2/3 object-contain"/>
+                </div>
               </div>
 
-
-        <TextType
-  text={[
-    "Presenting You",
-    "The OverLay",
-    "` Born here. Styled to slay. those Gucci boys. `"
-  ]}
-  typingSpeed={75}
-  pauseDuration={1500}
-  showCursor={true}
-  cursorCharacter="|"
-  className="w-full absolute mt-[16vh] mb-[20vh] left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:left-20 -translate-y-[50%] w-[60%] text-center md:text-left md:left-15"
-/>
-
-<img src={img1} alt="" className="absolute right-0 md:right-5 bottom-10 md:bottom-10 h-[40%] sm:h-[60%] md:h-[55%] lg:h-[60%]"/>
-<img src={img2} alt=""
- className="absolute h-[25%] md:h-[32%] bottom-[32vh] sm:bottom-[25vh] md:bottom-[15vh] sm:h-[30%]
- md:right-1/3 sm:right-1/2 right-1/6 lg:h-[40%] lg:right-1/5 lg:bottom-[20vh]"/>
+              <img src={img1} alt="" className="absolute right-0 md:right-5 bottom-10 md:bottom-10 h-[40%] sm:h-[60%] md:h-[55%] lg:h-[60%]"/>
+              <img src={img2} alt=""
+                className="absolute h-[25%] md:h-[32%] bottom-[32vh] sm:bottom-[25vh] md:bottom-[15vh] sm:h-[30%]
+                md:right-1/3 sm:right-1/2 right-1/6 lg:h-[40%] lg:right-1/5 lg:bottom-[20vh]"/>
 
              </div>
             </div>
