@@ -8,7 +8,7 @@ import {
   FaTruck,
 } from "react-icons/fa";
 import navimage from "../assets/images/navicon.png";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { SignedIn, SignedOut, useUser } from "@clerk/clerk-react";
 
 const UserBadge = () => {
@@ -32,6 +32,8 @@ const UserBadge = () => {
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [showFirst, setShowFirst] = useState(true);
+  const [navVisible, setNavVisible] = useState(true);
+  const lastScrollY = useRef(window.scrollY);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -40,10 +42,31 @@ const Nav = () => {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    let ticking = false;
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const currentY = window.scrollY;
+          if (currentY > lastScrollY.current && currentY > 40) {
+            setNavVisible(false); // scroll down, hide nav
+          } else {
+            setNavVisible(true); // scroll up, show nav
+          }
+          lastScrollY.current = currentY;
+          ticking = false;
+        });
+        ticking = true;
+      }
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <>
       {/* Top Banner */}
-      <div className="fixed top-0 w-full z-[999]">
+      <div className={`fixed top-0 w-full z-[999] transition-transform duration-500 ${navVisible ? 'translate-y-0' : '-translate-y-full'}`}>
         <div className="w-full h-[6vh] bg-gradient-to-r from-orange-500 via-yellow-500 to-red-500 text-white flex items-center justify-center relative font-semibold text-sm tracking-wide overflow-hidden">
           <div
             className={`absolute flex items-center gap-2 transition-all duration-700 ${
