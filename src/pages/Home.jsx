@@ -123,8 +123,8 @@ const Home = () => {
         infiniteLoop={true}
         autoPlay={true}
         interval={3000}
-        swipeable={false}
-        emulateTouch={true}
+        swipeable={true}
+        emulateTouch={false}
       >
         <div>
           <img  src={mimg7} alt="Image 1" className="object-cover h-full w-screen" />
