@@ -124,8 +124,8 @@ const Loader = ({ onFinish }) => {
                 className="w-full absolute mt-[16vh] mb-[20vh] left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:left-20 -translate-y-[50%] w-[60%] text-center md:text-left md:left-15 z-50"
               />
 
-              {/* Logo and CircularText ring container at fixed bottom left above taskbar with even more left margin */}
-              <div className="fixed bottom-24 left-32 w-[80px] h-[80px] md:w-[120px] md:h-[120px] lg:w-[160px] lg:h-[160px] z-30 flex items-center justify-center">
+              {/* Logo and CircularText ring container at fixed bottom left above taskbar with more margin */}
+              <div className="fixed bottom-16 md:left-16 w-[80px] h-[80px] md:w-[120px] md:h-[120px] lg:w-[160px] lg:h-[160px] z-30 flex items-center justify-center">
                 {/* CircularText as a ring around the logo */}
                 <CircularText
                   text=" 🔥 OVERLAY 🔥 CLOTHING"
@@ -134,7 +134,7 @@ const Loader = ({ onFinish }) => {
                   className="w-20 h-20 absolute top-0 left-0"
                 />
                 {/* Logo in the center */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-[60px] h-[60px] md:w-[90px] md:h-[90px] lg:w-[120px] lg:h-[120px] border-4 border-white animate-pulse flex items-center justify-center z-40 bg-black">
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-[60px] h-[60px] md:w-[90px] md:h-[90px] lg:w-[120px] lg:h-[120px] border-1 lg:border-4 border-white animate-pulse flex items-center justify-center z-40 bg-black">
                   <img src={navicon} alt="" className="aniimate-pulse w-2/3 h-2/3 object-contain"/>
                 </div>
               </div>
