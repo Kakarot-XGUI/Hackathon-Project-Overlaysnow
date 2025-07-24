@@ -6,6 +6,7 @@ import MainRoutes from "./routes/Mainroutes";
 import Footer from "./components/Footer";
 import SmoothScroll from "./components/SmoothScroll";
 import ScrollToTop from './components/ScrollToTop';
+import SmoothCursor from "./components/SmoothCursor"; 
 import { ClerkProvider } from "@clerk/clerk-react";
 
 const clerkPubKey = "pk_test_a2V5LWd1bGwtNjYuY2xlcmsuYWNjb3VudHMuZGV2JA";
@@ -14,8 +15,10 @@ const App = () => {
   const [loadingFinished, setLoadingFinished] = useState(false);
 
   return (
-
     <>
+      
+      <SmoothCursor />
+
       {!loadingFinished && <Loader onFinish={() => setLoadingFinished(true)} />}
 
       {loadingFinished && (
@@ -31,7 +34,6 @@ const App = () => {
           </ClerkProvider>
         </div>
       )}
-      
     </>
   );
 };
