@@ -4,35 +4,57 @@ import img2 from "../assets/images/Loaderd.png"
 import TextType from "../components/TextType"
 import navicon from "../assets/images/navicon.png"
 import ScrollVelocity from "./ScrollVelocity";
+
+const overlayTranslations = [
+  'Overlay', // English
+  'ओवरले', // Hindi
+  'ओवरले', // Hinglish
+  'ओव्हरले', // Marathi
+  'ਓਵਰਲੇ', // Punjabi
+  'ஓவர்லே', // Tamil
+  'ఓవర్లే', // Telugu
+  'ಓವರ್‌ಲೇ', // Kannada
+  'ഓവർലെ', // Malayalam
+  'ওভারলে', // Bengali
+  'ઓવરલે', // Gujarati
+  'अधिस्तरण', // Sanskrit
+];
+
 const Loader = ({ onFinish }) => {
-  const [count, setCount] = useState(0);
   const [showLine, setShowLine] = useState(false);
   const [animateLine, setAnimateLine] = useState(false);
   const [showLanding, setShowLanding] = useState(false);
   const [readyToClick, setReadyToClick] = useState(false);
   const [animateExit, setAnimateExit] = useState(false);
+  const [langIndex, setLangIndex] = useState(0);
+  const [fade, setFade] = useState(true);
 
   useEffect(() => {
-    let interval;
-    if (count < 99) {
-      interval = setInterval(() => {
-        setCount((c) => c + 1);
-      }, 30);
-    } else {
-      clearInterval(interval);
-
-      // sequence of reveals
-      setTimeout(() => setShowLine(true), 300);
-      setTimeout(() => setAnimateLine(true), 500);
-      setTimeout(() => setShowLanding(true), 1600);
-      setTimeout(() => setReadyToClick(true), 2000);
-    }
-    return () => clearInterval(interval);
-  }, [count]);
+    let langInterval;
+    let landingTimeout;
+    langInterval = setInterval(() => {
+      setFade(false);
+      setTimeout(() => {
+        setLangIndex((i) => (i + 1) % overlayTranslations.length);
+        setFade(true);
+      }, 200);
+    }, 400);
+    landingTimeout = setTimeout(() => {
+      clearInterval(langInterval);
+      setShowLine(true);
+      setTimeout(() => setAnimateLine(true), 200);
+      setTimeout(() => setShowLanding(true), 1300);
+      setTimeout(() => setReadyToClick(true), 1700);
+    }, 8000);
+    return () => {
+      clearInterval(langInterval);
+      clearTimeout(landingTimeout);
+    };
+  }, []);
 
   const handleLandingClick = () => {
     if (!readyToClick) return;
-    // kick off full-screen slide-up
+    
     setAnimateExit(true);
     // only call onFinish after the slide completes
     setTimeout(onFinish, 800);
@@ -49,11 +71,16 @@ const Loader = ({ onFinish }) => {
       {/* black backdrop */}
       <div className="absolute inset-0 bg-black" />
 
-      {/* counter + spinner */}
+      {/* Overlay translation in center + spinner at bottom center */}
       {!showLanding && (
         <>
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-6xl font-bold z-10">
-            {count < 99 ? count : "99"}
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
+            <span
+              className={`text-white text-5xl md:text-7xl font-extrabold transition-opacity duration-200 ${fade ? 'opacity-100' : 'opacity-0'}`}
+              style={{ letterSpacing: '0.05em', textShadow: '0 2px 16px rgba(0,0,0,0.25)' }}
+            >
+              {overlayTranslations[langIndex]}
+            </span>
           </div>
           <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 z-10">
             <div className="w-8 h-8 border-4 border-white border-t-transparent rounded-full animate-spin" />
