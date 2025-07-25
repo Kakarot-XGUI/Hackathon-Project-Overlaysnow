@@ -1,3 +1,5 @@
+// React Bits COmponent
+
 "use client";
 
 import { useEffect, useRef, useState, createElement } from "react";

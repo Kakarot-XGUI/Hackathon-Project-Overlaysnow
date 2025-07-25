@@ -1,3 +1,5 @@
+// React Bits Component
+
 import { useRef, useLayoutEffect, useState } from "react";
 import {
   motion,

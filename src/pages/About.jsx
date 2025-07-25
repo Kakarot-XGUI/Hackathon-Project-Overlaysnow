@@ -1,3 +1,4 @@
+// About Page
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
 import { useRef, useEffect, useState } from "react";
 import Threads from "../components/Threads";
@@ -8,7 +9,7 @@ import img2024 from "../assets/images/img4.jpg";
 import img2025 from "../assets/images/img5.jpg";
 
 
-// === Timeline Data ===
+//  Timeline Data
 const timelineData = [
   {
     year: "2021 : The Launch Year",
@@ -76,7 +77,7 @@ const TimelineCard = ({ year, image, description, reverse }) => {
   );
 };
 
-// === Main About Component ===
+// Main About Component
 const About =  () => {
   const containerRef = useRef(null);
 
@@ -143,13 +144,13 @@ const About =  () => {
         {/*  Center Vertical Line  */}
         <div className="hidden md:block absolute left-1/2 top-0 h-full w-[6px] bg-gradient-to-b from-orange-500 to-orange-600 transform -translate-x-1/2 z-0" />
 
-        {/* === Glowing Circle Following Scroll === */}
+        {/*  Glowing Circle Following Scroll */}
         <motion.div
           className="hidden md:block w-5 h-5 rounded-full bg-white ring-4 ring-orange-500 shadow-xl absolute left-1/2 z-10 -translate-x-1/2"
           style={{ y: springY }}
         />
 
-        {/* === Timeline Cards === */}
+        {/* Timeline Cards */}
         <div className="relative z-10">
           {timelineData.map((item, index) => (
             <TimelineCard

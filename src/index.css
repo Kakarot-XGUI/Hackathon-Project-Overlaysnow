@@ -2,9 +2,7 @@
 
 @import "tailwindcss";
 
-*{
-   transition: cursor 0.1s ease-in-out;
-}
+
 
 body {
   box-sizing: border-box;

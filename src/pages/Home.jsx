@@ -1,7 +1,9 @@
-import { Carousel } from 'react-responsive-carousel';
-import InfiniteCarousel from '../components/InfiniteCarousel';
+// Main Home Page
+
+import { Carousel } from 'react-responsive-carousel';  // Npm Pckage Carousal
+import InfiniteCarousel from '../components/InfiniteCarousel'; 
 import 'react-responsive-carousel/lib/styles/carousel.min.css';
-import ScrollVelocity from "../components/ScrollVelocity";
+import ScrollVelocity from "../components/ScrollVelocity"; // React Bits Component
 import ProductCard from '../components/ProductCard';
 import homeProducts from '../data/homeProducts';
 import mimg1 from '../assets/images/mimg1.png'; 

@@ -1,3 +1,5 @@
+// Product Description Page
+
 import { useParams } from 'react-router-dom';
 import products from '../data/products';
 import homeProducts from '../data/homeProducts';

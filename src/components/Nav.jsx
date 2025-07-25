@@ -1,3 +1,5 @@
+// Started Creating This From here Only , with No Clue
+
 import { NavLink } from "react-router-dom";
 import {
   FaShoppingCart,
@@ -123,7 +125,7 @@ const Nav = () => {
             <img src={navimage} alt="Overlay Logo" className="w-16 md:w-20 h-auto" />
           </div>
 
-          {/* Right: Search, Cart, Auth */}
+          {/* Right: Search, Cart, Authantication */}
           <div className="flex items-center gap-4 z-[1001]">
             <FaSearch className="hidden md:block cursor-pointer" />
             <FaShoppingCart className="hidden md:block cursor-pointer" />

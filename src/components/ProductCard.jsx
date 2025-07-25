@@ -1,3 +1,5 @@
+// Product Card Ui gonna render in ProductSection.jsx
+
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 

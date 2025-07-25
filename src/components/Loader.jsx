@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import img1 from "../assets/images/Loader.png"
 import img2 from "../assets/images/Loaderd.png"
-import TextType from "../components/TextType"
+import TextType from "../components/TextType"  // React bit component hai yei
 import navicon from "../assets/images/navicon.png"
-import ScrollVelocity from "./ScrollVelocity";
-import CircularText from "../components/CircularText";
+import ScrollVelocity from "./ScrollVelocity";  // React bit component hai yei
+import CircularText from "../components/CircularText";  // again react bit
 
 const overlayTranslations = [
   'Overlay', // English
@@ -20,6 +20,7 @@ const overlayTranslations = [
   'ઓવરલે', // Gujarati
   'अधिस्तरण', // Sanskrit
 ];
+
 
 const Loader = ({ onFinish }) => {
   const [showLine, setShowLine] = useState(false);
@@ -38,14 +39,14 @@ const Loader = ({ onFinish }) => {
       setTimeout(() => {
         setLangIndex((i) => (i + 1) % overlayTranslations.length);
         setFade(true);
-      }, 200);
-    }, 400);
+      }, 150);
+    }, 300);
     landingTimeout = setTimeout(() => {
       clearInterval(langInterval);
       setShowLine(true);
-      setTimeout(() => setAnimateLine(true), 200);
-      setTimeout(() => setShowLanding(true), 1300);
-      setTimeout(() => setReadyToClick(true), 1700);
+      setTimeout(() => setAnimateLine(true), 180);
+      setTimeout(() => setShowLanding(true), 1100);
+      setTimeout(() => setReadyToClick(true), 1500);
     }, 8000);
     return () => {
       clearInterval(langInterval);
@@ -57,7 +58,7 @@ const Loader = ({ onFinish }) => {
     if (!readyToClick) return;
     
     setAnimateExit(true);
-    // only call onFinish after the slide completes
+    // only call onFinish 
     setTimeout(onFinish, 800);
   };
 
@@ -72,7 +73,7 @@ const Loader = ({ onFinish }) => {
       {/* black backdrop */}
       <div className="absolute inset-0 bg-black" />
 
-      {/* Overlay translation in center + spinner at bottom center */}
+      {/* Overlay translation in center + spinner at bottom --> inspired by the yt short just scrolling , and meko accha laga so i implemented */}
       {!showLanding && (
         <>
           <div className="absolute text-orange-500 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-10">
@@ -89,7 +90,7 @@ const Loader = ({ onFinish }) => {
         </>
       )}
 
-      {/* white overlay growing down */}
+      {/* white overlay goes down */}
       {showLine && (
         <div
           className="absolute inset-0 bg-white flex items-center justify-center overflow-hidden z-20"
@@ -99,7 +100,7 @@ const Loader = ({ onFinish }) => {
           }}
           onClick={handleLandingClick}
         >
-          {/* landing content */}
+          {/* landing content  simple*/}
           {showLanding && (
             <div className="text-center px-6 flex justify-center items-center">
              <div className="bg-black absolute w-[97%] h-[95%] text-white">
@@ -110,7 +111,7 @@ const Loader = ({ onFinish }) => {
                 className="custom-scroll-text bg-transparent text-white text-2xl md:text-4xl uppercase animate-pulse"
               />
 
-              {/* Re-add TextType and images with original CSS, but place TextType above the logo/ring */}
+              {/* React bit component TextType */}
               <TextType
                 text={[
                   "Presenting You",
@@ -121,25 +122,28 @@ const Loader = ({ onFinish }) => {
                 pauseDuration={1500}
                 showCursor={true}
                 cursorCharacter="|"
-                className="w-full absolute mt-[16vh] mb-[20vh] left-1/2 -translate-x-1/2 lg:-translate-x-0 lg:left-20 -translate-y-[50%] w-[60%] text-center md:text-left md:left-15 z-50"
-              />
+className="absolute mt-[16vh] mb-[20vh] w-full 
+            text-center lg:text-left 
+            left-0 lg:left-20 
+            -translate-y-[50%] 
+            z-50"        />
 
-              {/* Logo and CircularText ring container at fixed bottom left above taskbar with more margin */}
-              <div className="fixed bottom-16 left-10 md:left-16 w-[80px] h-[80px] md:w-[120px] md:h-[120px] lg:w-[160px] lg:h-[160px] z-30 flex items-center justify-center">
-                {/* CircularText as a ring around the logo */}
+              {/* Logo and CircularText ring container  */}
+              <div className="fixed bottom-16 left-10 md:left-14 lg:left-[20vh] md:bottom-[20vh] w-[80px] h-[80px] md:w-[120px] md:h-[120px] lg:w-[160px] lg:h-[160px] z-30 flex items-center justify-center">
+               
                 <CircularText
                   text=" 🔥 OVERLAY 🔥 CLOTHING"
                   onHover="speedUp"
                   spinDuration={20}
                   className="w-20 h-20 absolute top-0 left-0"
                 />
-                {/* Logo in the center */}
+               
                 <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-full w-[60px] h-[60px] md:w-[90px] md:h-[90px] lg:w-[120px] lg:h-[120px] border-1 lg:border-4 border-white animate-pulse flex items-center justify-center z-40 bg-black">
                   <img src={navicon} alt="" className="aniimate-pulse w-2/3 h-2/3 object-contain"/>
                 </div>
               </div>
 
-              <img src={img1} alt="" className="absolute right-0 md:right-5 bottom-10 md:bottom-10 h-[40%] sm:h-[60%] md:h-[55%] lg:h-[60%]"/>
+              <img src={img1} alt="" className="absolute right-0 md:right-5 bottom-10 md:bottom-15 lg:bottom-10 h-[40%] sm:h-[60%] md:h-[55%] lg:h-[60%]"/>
               <img src={img2} alt=""
                 className="absolute h-[25%] md:h-[32%] bottom-[32vh] sm:bottom-[25vh] md:bottom-[15vh] sm:h-[30%]
                 md:right-1/3 sm:right-1/2 right-1/6 lg:h-[40%] lg:right-1/5 lg:bottom-[20vh]"/>

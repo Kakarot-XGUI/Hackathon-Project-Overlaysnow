@@ -1,3 +1,4 @@
+//  Tried To Create an Infinite Crousal Using Framer
 import React, { useEffect, useRef } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { Link } from 'react-router-dom';

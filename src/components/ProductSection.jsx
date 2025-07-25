@@ -1,3 +1,5 @@
+// product section , Product card yaha render hoga + include Search feature + Filter by Category 
+
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import ProductCard from './ProductCard';

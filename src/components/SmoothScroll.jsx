@@ -1,3 +1,5 @@
+// Lenis Implemented
+
 import { useEffect } from "react";
 import Lenis from "lenis";
 

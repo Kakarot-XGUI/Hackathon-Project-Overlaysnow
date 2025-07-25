@@ -1,3 +1,5 @@
+// All Routes Present Here
+
 import { useState } from "react";
 import Loader from "./components/Loader";
 import Nav from "./components/Nav";

@@ -1,3 +1,5 @@
+// CLerk authentication User Badge
+
 import { useUser } from "@clerk/clerk-react";
 
 const UserBadge = () => {

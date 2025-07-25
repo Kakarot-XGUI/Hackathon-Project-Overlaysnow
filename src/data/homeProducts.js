@@ -1,3 +1,5 @@
+// Home Main Products to Show
+
 import p1 from '../assets/images/p1.jpg';
 import p2 from '../assets/images/p2.jpg';
 import p3 from '../assets/images/p3.jpg';
